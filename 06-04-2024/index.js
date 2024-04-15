@@ -1,6 +1,6 @@
 /**
  ** Para verificar se a função está correta, execute os comandos abaixo no terminal
- ** npm run test -- ./06-04-2024/06-04-2024.test.js
+ ** npm run test -- ./06-04-2024/index.test.js
  */
 
 /*
