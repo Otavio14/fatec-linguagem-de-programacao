@@ -3,7 +3,11 @@ import { validationResult } from "express-validator";
 
 export default class ProdutoController {
   static async index(_, res) {
-    const produtos = await Produto.findMany();
+    const produtos = await Produto.findMany({
+      include: {
+        fotos: true,
+      },
+    });
     res.json(produtos);
   }
 
@@ -28,6 +32,9 @@ export default class ProdutoController {
     const produto = await Produto.findUnique({
       where: {
         id: parseInt(req.params.id),
+      },
+      include: {
+        fotos: true,
       },
     });
     if (!produto) {
